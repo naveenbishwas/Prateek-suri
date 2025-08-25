@@ -285,3 +285,8 @@ img {
     gap: 1rem;
   }
 }
+
+.mid-img img {
+  width: 100%;
+  height: auto;
+}
