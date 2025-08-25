@@ -103,7 +103,6 @@ img {
   border-radius: 16px;
   object-fit: cover;
   aspect-ratio: 3/4;
-  filter: grayscale(100%);
   transition: filter 0.8s ease;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
 }
