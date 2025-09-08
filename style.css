@@ -306,6 +306,10 @@ img {
   box-shadow: var(--shadow-card);
 }
 
+.coming-text.aos-init.aos-animate p {
+  padding: 15px 0;
+}
+
 @media (max-width: 920px) {
   .about-left img {
     width: 250px;
@@ -365,11 +369,9 @@ img {
   place-items: center;
 }
 .coming-image img {
-  width: clamp(220px, 40vw, 360px);
+  width: clamp(220px, 40vw, 330px);
   border-radius: 10px;
   box-shadow: var(--shadow-card);
-  aspect-ratio: 3/4;
-  object-fit: cover;
 }
 @media (max-width: 920px) {
   .coming-soon {
@@ -525,6 +527,7 @@ img {
   gap: clamp(12px, 2vw, 24px);
   flex-wrap: wrap;
   margin: 1rem 0;
+  display: none;
 }
 .footer-links a {
   color: #aaa;
