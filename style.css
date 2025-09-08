@@ -628,3 +628,58 @@ img {
     max-width: calc(var(--maxw) + 120px);
   }
 }
+
+/* ===== Collapsible (mobile-only default) ===== */
+.collapsible {
+  margin-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 12px;
+}
+
+.read-toggle {
+  list-style: none; /* hide default disclosure marker in some browsers */
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--brand), #ffde59);
+  color: #000;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  box-shadow: 0 4px 15px rgba(249, 196, 0, 0.35);
+  margin-bottom: 10px;
+  user-select: none;
+}
+
+.read-toggle::-webkit-details-marker {
+  display: none;
+} /* Safari/Chrome built-in marker */
+
+/* Change label when open */
+.collapsible[open] > .read-toggle::after {
+  content: " (Read less)";
+  font-weight: 600;
+  color: #222;
+}
+.collapsible:not([open]) > .read-toggle::after {
+  content: "";
+}
+
+/* Desktop: always expanded, hide the button */
+@media (min-width: 721px) {
+  .collapsible {
+    border-top: 0;
+    padding-top: 0;
+  }
+  .collapsible > .read-toggle {
+    display: none;
+  }
+  /* ensure content shows even if 'open' removed by user */
+  .collapsible > *:not(summary) {
+    display: block;
+  }
+}
