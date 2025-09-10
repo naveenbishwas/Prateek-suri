@@ -346,6 +346,64 @@ img {
   }
 }
 
+.logo-slider {
+  overflow: hidden;
+  /* background: #fff; */
+  padding: 80px 0;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05) inset;
+}
+
+.logo-slider h1 {
+  text-align: center;
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  margin: 0 0 50px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+@media screen and (max-width: 768px) {
+  .logo-slider h1 {
+    font-size: 23px;
+    margin: 0 0 10px;
+  }
+}
+
+.logo-track {
+  display: flex;
+  width: max-content;
+  gap: 60px;
+  align-items: center;
+  animation: scroll 40s linear infinite;
+}
+
+.logo-track img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  padding: 6px 0;
+  filter: brightness(1) invert(1);
+}
+
+.logo-track img:hover {
+  /* filter: grayscale(100%) brightness(0.85); */
+  transform: scale(1.05);
+}
+
+#big-img {
+  width: 80px !important;
+  height: auto;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 /* =========================
    Coming Soon
 ========================= */
