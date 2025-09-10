@@ -741,3 +741,61 @@ img {
     display: block;
   }
 }
+
+/* --- Remove horizontal overflow (mobile-safe) --- */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* fallback */
+}
+@supports (overflow: clip) {
+  html,
+  body {
+    overflow-x: clip;
+  } /* prevents scroll but still allows transforms */
+}
+
+/* Ensure grid/flex children don’t force overflow */
+.hero-text,
+.hero-image,
+.about-left,
+.about-content,
+.book-wrap > *,
+.coming-soon > *,
+.recognised__wrap > * {
+  min-width: 0; /* critical for long text / wide children */
+}
+
+/* Contain any animated or absolutely-positioned sections */
+.hero,
+.hero-content,
+.about,
+.about-wrap,
+.book,
+.book-wrap,
+.coming-soon,
+.recognised,
+.recognised__wrap,
+.logo-slider,
+.footer {
+  overflow-x: clip; /* contain inner effects without showing a scrollbar */
+}
+
+/* Extra safety for media */
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Mobile menu panel: make sure 100% width doesn't exceed viewport with padding */
+@media (max-width: 720px) {
+  .navbar.nav--open .nav-links {
+    left: 0;
+    right: 0;
+    box-sizing: border-box; /* keep padding inside the viewport */
+  }
+}
